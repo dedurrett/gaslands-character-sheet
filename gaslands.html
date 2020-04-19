@@ -1,0 +1,717 @@
+<!-- Sheet code -->
+
+    <div class="3colrow">
+        
+        <div class="col">
+    		<img src="https://blotz.co.uk/images/categories/Gaslands_logo.jpg" />
+    	</div>
+    	
+        <div class="col">
+            <label class="sheet-statlabel">Callsign:</label><input type="text" name="attr_character_name" />
+        	<label class="sheet-statlabel">Type:</label><select name="attr_type">
+                <option value="-" selected></option>
+                <option value="BIKE">Bike</option>
+                <option value="BUGGY">Buggy</option>
+                <option value="TRIKE">Trike</option>
+                <option value="BIKE & SIDECAR">Bike & Sidecar</option>
+                <option value="CAR">Car</option>
+                <option value="JEEP">Jeep</option>
+                <option value="PERFORMANCE CAR">Performance Car</option>
+                <option value="PICKUP TRUCK">Pickup Truck</option>
+                <option value="VAN">Van</option>
+                <option value="TRACTOR">Tractor</option>
+                <option value="MONSTER TRUCK">Monster Truck</option>
+                <option value="BUS">Bus</option>
+                <option value="COACH">Coach</option>
+                <option value="WAR RIG">War Rig</option>
+                <option value="GYROCOPTER">Gyrocopter</option>
+                <option value="HELICOPTER">Helicopter</option>
+                <option value="TANK">Tank</option>
+            </select>
+    		<label class="sheet-statlabel">Weight:</label><input type="text" name="attr_weightdisplay" readonly />
+            <select class="hide-it" name="attr_weight">
+                <option value="0" selected></option>
+                <option value="1">Lightweight</option>
+                <option value="2">Middleweight</option>
+                <option value="3">Heavyweight</option>
+            </select>
+    	</div>
+    
+    	<div class="col">
+    		<label class="sheet-statlabel">Can Cost:</label><input type="number" name="attr_cancost" value=0 readonly />
+    		<input type="hidden" name="attr_chassiscost" value=0/>
+    		<input type="hidden" name="attr_totalweaponcost" value=0/>
+    		<input type="hidden" name="attr_totalupgradecost" value=0/>
+    		<br />
+    		<label class="sheet-statlabel">Slots:</label><input type="number" name="attr_slots" value=0 readonly /><input type="number" name="attr_slots_max" value=0 readonly />
+    		<input type="hidden" name="attr_totalweaponslots" value=0/>
+    		<input type="hidden" name="attr_totalupgradeslots" value=0/>
+    	</div>
+    	
+    </div>
+    <div>&nbsp;</div>
+    <label>Vehicle Properties: </label>
+    <input class="sheet-wepspecial" type="text" name="attr_vehiclenotes" readonly/>
+    
+<hr/>
+
+    <div class="3colrow">
+        
+    	<div class="col">
+    	    
+    	    <div class="stats">
+    		    <label class="sheet-statlabel">Handling:</label><input type="number" name="attr_handling" value=0 readonly />
+    		    <input type="hidden" name="attr_chassishandling" value=0 />
+    		    <input type="hidden" name="attr_totalupgradehandling" value=0 />
+            </div>
+            
+            <div class="stats">
+    		    <label class="sheet-statlabel">Crew:</label><input type="number" name="attr_crew" value=0 readonly />
+    		    <input type="hidden" name="attr_chassiscrew" value=0 />
+    		    <input type="hidden" name="attr_totalupgradecrew" value=0 />
+            </div>
+            
+    	</div>
+    	
+    	<div class="col">
+    	    
+            <div class="stats">
+                <label class="sheet-statlabel">Hull:</label><input type="number" value=0 name="attr_hull" /><input type="number" name="attr_hull_max" value=0 readonly />
+                <input type="hidden" name="attr_chassishull_max" value=0 />
+                <input type="hidden" name="attr_totalupgradehull_max" value=0 />
+            </div>
+            
+            <div class="stats">
+                <label class="sheet-statlabel">Gear:</label><input type="number" value=0 name="attr_gear" /><input type="number"  name="attr_gear_max" value=0 readonly />
+                <input type="hidden"  name="attr_chassisgear_max" value=0 />
+                <input type="hidden" name="attr_totalupgradegear_max" value=0 />
+            </div>
+            
+    	</div>
+            
+    	<div class="col">
+    	    
+    		<div class="stats">
+                <label class="sheet-statlabel">Hazards</label><input type="number" value=0 name="attr_hazards" /><input type="hidden" value=5 name="attr_hazards_max" />
+            </div>
+            
+    	</div>
+    
+    </div>
+    
+<hr/>
+
+	<div>
+		<h2>Weapons</h2>
+	    <!--<textarea name="attr_weapons"></textarea>-->
+        <label>Name&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Type&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Attack&emsp;Facing&emsp;&emsp;Range&emsp;&emsp;&emsp;&emsp;&emsp;Slots&emsp;&emsp;&emsp;Ammo&emsp;&emsp;Cost</label>
+        <fieldset class="repeating_weapons">
+            <div class="sheet-weaponcontainer">
+                <select name="attr_weaponname">
+                    <option value="-" selected></option>
+                    <option value="HANDGUN">Handgun</option>
+                    <option value="MG">Machine Gun</option>
+                    <option value="HMG">Heavy Machine Gun</option>
+                    <option value="MINIGUN">Minigun</option>
+                    <option value="CANNON">125mm Cannon</option>
+                    <option value="ROCKETS">Rockets</option>
+                    <option value="FLAMER">Flamethrower</option>
+                    <option value="MORTAR">Mortar</option>
+                    <option value="GRENADES">Grenades</option>
+                    <option value="MOLOTOVS">Molotov Cocktails</option>
+                    <option value="OILSLICK">Oil Slick Dropper</option>
+                    <option value="CALTROPS">Calrop Dropper</option>
+                    <option value="GLUE">Glue Dropper</option>
+                    <option value="MINES">Mines</option>
+                    <option value="SMOKE">Smoke</option>
+                    <option value="RAM">Ram</option>
+                    <option value="EXPLODE">Exploding Ram</option>
+                    <option value="THUMPER">Thumper</option>
+                    <option value="LIGHTNING">Arc Lightning Projector</option>
+                    <option value="BOOSTER">Kinetic Super Booster</option>
+                    <option value="JAMMER">Magnetic Jammer</option>
+                </select>
+                <input class="sheet-wepbig" type="text" name="attr_weapontype" readonly/>
+                <input class="sheet-wepsmall" type="text" name="attr_weaponattack" readonly/>
+                <select class="sheet-wepface" name="attr_weaponfacing">
+                    <option value="Front" selected>Front</option>
+                    <option value="Side">Side</option>
+                    <option value="Rear">Rear</option>
+                    <option value="Turret">Turret</option>
+                </select>
+                <input class="sheet-wepbig" type="text" name="attr_weaponrange" readonly/>
+                <input class="sheet-wepsmall" type="text" name="attr_weaponslots" readonly/>
+                <input class="sheet-wepsmall" type="text" name="attr_weaponammo"/> /
+                <input class="sheet-wepsmall" type="text" name="attr_weaponammo_max" readonly/>
+                <input class="sheet-wepsmall" type="text" name="attr_weaponcost" readonly/>
+                <button class="sheet-wepbutton" type="roll" name="roll_weapon" value="&{template:Gaslands} {{title=@{weaponname}}} {{subheader=@{character_name} @{weaponfacing} Attack}} {{check=[[@{weaponattack}sd>?{To Hit|4}]]}}"></button>
+                <input class="sheet-wepspecial" type="text" name="attr_weaponspecial" readonly/>
+            </div>
+            <div>&nbsp;</div>
+        </fieldset>
+	</div>
+    	
+	<div>
+		<h2>Upgrades</h2>
+		<!--<textarea name="attr_perks"></textarea>-->
+		        <label>Name&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Slots&emsp;&emsp;&emsp;Ammo&emsp;&emsp;Cost</label>
+        <fieldset class="repeating_upgrades">
+            <div>
+                <select name="attr_upgradename">
+                    <option value="-" selected></option>
+                    <option value="NITRO">Nitro Booster</option>
+                    <option value="ARMOR">Armour Plating</option>
+                    <option value="TRACKS">Tank Tracks</option>
+                    <option value="XTRACREW">Extra Crewmember</option>
+                </select>
+                <input class="sheet-wepsmall" type="text" name="attr_upgradeslots" readonly/>
+                <input class="sheet-wepsmall" type="text" name="attr_upgradeammo"/> /
+                <input class="sheet-wepsmall" type="text" name="attr_upgradeammo_max" readonly/>
+                <input class="sheet-wepsmall" type="text" name="attr_upgradecost" readonly/>
+                <!--<button class="sheet-wepbutton" type="roll" name="roll_weapon" value="&{template:Gaslands} {{title=@{weaponname}}} {{subheader=@{character_name} @{weaponfacing} Attack}} {{check=[[@{weaponattack}sd>?{To Hit|4}]]}}"></button>-->
+                <input class="sheet-wepspecial" type="text" name="attr_upgradespecial" readonly/>
+            </div>
+            <div>&nbsp;</div>
+        </fieldset>
+	</div>
+	<div>
+		<h2>Perks</h2>
+        <textarea name="attr_perks"></textarea>
+    </div>
+<hr/>
+    	
+</div>
+
+<!-- Sheet workers -->
+<script type="text/worker">
+// Calculate Total Can Cost of Vehicle as Configured
+on('change:chassiscost change:totalweaponcost change:totalupgradecost', function() {
+    getAttrs(["chassiscost", "totalweaponcost", "totalupgradecost"], function(values) {
+      setAttrs({ cancost: parseInt(values.chassiscost) + parseInt(values.totalweaponcost) + parseInt(values.totalupgradecost) });
+   });
+});
+on('change:chassishull_max change:totalupgradehull_max', function() {
+    getAttrs(["chassishull_max", "totalupgradehull_max"], function(values) {
+      setAttrs({ hull_max: parseInt(values.chassishull_max) + parseInt(values.totalupgradehull_max) });
+   });
+});
+on('change:chassisgear_max change:totalupgradegear_max', function() {
+    getAttrs(["chassisgear_max", "totalupgradegear_max"], function(values) {
+      setAttrs({ gear_max: parseInt(values.chassisgear_max) + parseInt(values.totalupgradegear_max) });
+   });
+});
+on('change:chassishandling change:totalupgradehandling', function() {
+    getAttrs(["chassishandling", "totalupgradehandling"], function(values) {
+      setAttrs({ handling: parseInt(values.chassishandling) + parseInt(values.totalupgradehandling) });
+   });
+});
+on('change:chassiscrew change:totalupgradecrew', function() {
+    getAttrs(["chassiscrew", "totalupgradecrew"], function(values) {
+      setAttrs({ crew: parseInt(values.chassiscrew) + parseInt(values.totalupgradecrew) });
+   });
+});
+on('change:totalweaponslots change:totalupgradeslots', function() {
+    getAttrs(["totalweaponslots", "totalupgradeslots"], function(values) {
+      setAttrs({ slots: parseInt(values.totalweaponslots) + parseInt(values.totalupgradeslots) });
+   });
+});
+//Calculate Encumbrance and Max
+/* ===== PARAMETERS ==========
+destination = the name of the attribute that stores the total quantity
+section = name of repeating fieldset, without the repeating_
+fields = the name of the attribute field to be summed
+      can be a single attribute: 'weight'
+      or an array of attributes: ['weight','number','equipped']
+multiplier (optional) = a multiplier to the entire fieldset total. For instance, if summing coins of weight 0.02, might want to multiply the final total by 0.02.
+*/
+const repeatingSum = (destination, section, fields, multiplier = 1) => {
+    if (!Array.isArray(fields)) fields = [fields];
+    getSectionIDs(`repeating_${section}`, idArray => {
+        const attrArray = idArray.reduce( (m,id) => [...m, ...(fields.map(field => `repeating_${section}_${id}_${field}`))],[]);
+        getAttrs(attrArray, v => {
+            console.log("===== values of v: "+ JSON.stringify(v) +" =====");
+                 // getValue: if not a number, returns 1 if it is 'on' (checkbox), otherwise returns 0..
+            const getValue = (section, id,field) => parseFloat(v[`repeating_${section}_${id}_${field}`]) || (v[`repeating_${section}_${id}_${field}`] === 'on' ? 1 : 0); 
+            const sumTotal = idArray.reduce((total, id) => total + fields.reduce((subtotal,field) => subtotal * getValue(section, id,field),1),0);
+            setAttrs({[destination]: sumTotal * multiplier});    
+        });
+    });
+};
+on('change:repeating_weapons remove:repeating_weapons', function() {
+	repeatingSum("totalweaponcost","weapons","weaponcost");
+	repeatingSum("totalweaponslots","weapons","weaponslots");
+});
+on('change:repeating_upgrades remove:repeating_upgrades', function() {
+	repeatingSum("totalupgradecost","upgrades","upgradecost");
+	repeatingSum("totalupgradeslots","upgrades","upgradeslots");
+	repeatingSum("totalupgradehull_max", "upgrades", "upgradehull");
+	repeatingSum("totalupgradegear_max", "upgrades", "upgradegear");
+	repeatingSum("totalupgradehandling", "upgrades", "upgradehandling");
+	repeatingSum("totalupgradecrew", "upgrades", "upgradecrew");
+});
+// Calculating HitDie, and Misc Basic Skills
+on('change:type', function(eventInfo) {
+    switch (eventInfo.newValue) {
+        case "BIKE":
+            setAttrs({ weight: 1, chassishull_max: 4, chassishandling: 5, chassisgear_max: 6, slots_max: 1, chassiscrew: 1, chassiscost: 5, hull: 4, gear: 1, weightdisplay: "Lightweight", vehiclenotes: "Full Throttle. Pivot." });
+            break;
+        case "BUGGY":
+            setAttrs({ weight: 1, chassishull_max: 6, chassishandling: 4, chassisgear_max: 6, slots_max: 2, chassiscrew: 2, chassiscost: 5, hull: 6, gear: 1, weightdisplay: "Lightweight", vehiclenotes: "Roll Cage." });
+            break;
+        case "TRIKE":
+        case "BIKE & SIDECAR":
+            setAttrs({ weight: 1, chassishull_max: 6, chassishandling: 4, chassisgear_max: 6, slots_max: 2, chassiscrew: 2, chassiscost: 5, hull: 6, gear: 1, weightdisplay: "Lightweight", vehiclenotes: "None." });
+            break;
+        case "CAR":
+        case "JEEP":
+            setAttrs({ weight: 2, chassishull_max: 10, chassishandling: 3, chassisgear_max: 5, slots_max: 2, chassiscrew: 2, chassiscost: 12, hull: 10, gear: 1, weightdisplay: "Middleweight", vehiclenotes: "None." });
+            break;
+        case "PERFORMANCE CAR":
+            setAttrs({ weight: 2, chassishull_max: 8, chassishandling: 4, chassisgear_max: 6, slots_max: 2, chassiscrew: 1, chassiscost: 15, hull: 8, gear: 1, weightdisplay: "Middleweight", vehiclenotes: "Slip Away." });
+            break;
+        case "PICKUP TRUCK":
+        case "VAN":
+        case "TRACTOR":
+            setAttrs({ weight: 2, chassishull_max: 12, chassishandling: 2, chassisgear_max: 4, slots_max: 3, chassiscrew: 3, chassiscost: 15, hull: 12, gear: 1, weightdisplay: "Middleweight", vehiclenotes: "None." });
+            break;
+        case "MONSTER TRUCK":
+            setAttrs({ weight: 3, chassishull_max: 10, chassishandling: 3, chassisgear_max: 4, slots_max: 2, chassiscrew: 2, chassiscost: 25, hull: 10, gear: 1, weightdisplay: "Heavyweight", vehiclenotes: "Big Tires. Crush Attack." });
+            break;
+        case "BUS":
+        case "COACH":
+            setAttrs({ weight: 3, chassishull_max: 16, chassishandling: 2, chassisgear_max: 3, slots_max: 3, chassiscrew: 8, chassiscost: 30, hull: 16, gear: 1, weightdisplay: "Heavyweight", vehiclenotes: "None." });
+            break;
+        case "WAR RIG":
+            setAttrs({ weight: 3, chassishull_max: 20, chassishandling: 2, chassisgear_max: 4, slots_max: 5, chassiscrew: 5, chassiscost: 40, hull: 20, gear: 1, weightdisplay: "Heavyweight", vehiclenotes: "War Rig (Advanced Rules)." });
+            break;
+        case "GYROCOPTER":
+            setAttrs({ weight: 2, chassishull_max: 4, chassishandling: 4, chassisgear_max: 6, slots_max: 0, chassiscrew: 1, chassiscost: 10, hull: 4, gear: 1, weightdisplay: "Middleweight", vehiclenotes: "Airwolf. Airborne. Bombs Away." });
+            break;
+        case "HELICOPTER":
+            setAttrs({ weight: 3, chassishull_max: 8, chassishandling: 3, chassisgear_max: 4, slots_max: 4, chassiscrew: 2, chassiscost: 30, hull: 8, gear: 1, weightdisplay: "Heavyweight", vehiclenotes: "Airwolf. Airborne. Bombs Away." });
+            break;
+        case "TANK":
+            setAttrs({ weight: 3, chassishull_max: 20, chassishandling: 4, chassisgear_max: 3, slots_max: 4, chassiscrew: 3, chassiscost: 40, hull: 20, gear: 1, weightdisplay: "Heavyweight", vehiclenotes: "Pivot. Crush Attack. All Terrain." });
+            break;
+        default: 
+            setAttrs({ weight: 0, chassishull_max: 0, chassishandling: 0, chassisgear_max: 0, slots_max: 0, chassiscrew: 0, chassiscost: 0, hull: 0, gear: 0, weightdisplay: "", vehiclenotes: "None." });
+            break;
+    }
+});
+on('change:repeating_weapons:weaponname', function(eventInfo) {
+    var multiplier=0;
+    getAttrs(["repeating_weapons_weaponfacing"], function(value) {
+        multiplier=((value.repeating_weapons_weaponfacing == "Turret") ? 3 : 1);
+        switch (eventInfo.newValue) {
+            case "HANDGUN":
+                setAttrs({
+                    repeating_weapon_weapontype: "Shooting",
+                    repeating_weapon_weaponattack: "1D6",
+                    repeating_weapon_weaponrange: "Medium",
+                    repeating_weapon_weaponslots: 0,
+                    repeating_weapon_weaponammo: 0,
+                    repeating_weapon_weaponammo_max: 0,
+                    repeating_weapon_weaponcost: 0,
+                    repeating_weapon_weaponspecial: "Crew Fired."
+                });
+                break;
+            case "MG":
+                setAttrs({
+                    repeating_weapon_weapontype: "Shooting",
+                    repeating_weapon_weaponattack: "2D6",
+                    repeating_weapon_weaponrange: "Double",
+                    repeating_weapon_weaponslots: 1,
+                    repeating_weapon_weaponammo: 0,
+                    repeating_weapon_weaponammo_max: 0,
+                    repeating_weapon_weaponcost: 2*multiplier,
+                    repeating_weapon_weaponspecial: ""
+                });
+                break;
+            case "HMG":
+                setAttrs({
+                    repeating_weapon_weapontype: "Shooting",
+                    repeating_weapon_weaponattack: "3D6",
+                    repeating_weapon_weaponrange: "Double",
+                    repeating_weapon_weaponslots: 1,
+                    repeating_weapon_weaponammo: 0,
+                    repeating_weapon_weaponammo_max: 0,
+                    repeating_weapon_weaponcost: 4*multiplier,
+                    repeating_weapon_weaponspecial: ""
+                });
+                break;
+            case "MINIGUN":
+                setAttrs({
+                    repeating_weapon_weapontype: "Shooting",
+                    repeating_weapon_weaponattack: "4D6",
+                    repeating_weapon_weaponrange: "Double",
+                    repeating_weapon_weaponslots: 1,
+                    repeating_weapon_weaponammo: 0,
+                    repeating_weapon_weaponammo_max: 0,
+                    repeating_weapon_weaponcost: 6*multiplier,
+                    repeating_weapon_weaponspecial: ""
+                });
+                break;
+            case "CANNON":
+                setAttrs({
+                    repeating_weapon_weapontype: "Shooting",
+                    repeating_weapon_weaponattack: "8D6",
+                    repeating_weapon_weaponrange: "Double",
+                    repeating_weapon_weaponslots: 3,
+                    repeating_weapon_weaponammo: 3,
+                    repeating_weapon_weaponammo_max: 3,
+                    repeating_weapon_weaponcost: 6*multiplier,
+                    repeating_weapon_weaponspecial: "+2 hazard tokens when fired, if not a tank."
+                });
+                break;
+            case "ROCKETS":
+                setAttrs({
+                    repeating_weapon_weapontype: "Shooting",
+                    repeating_weapon_weaponattack: "6D6",
+                    repeating_weapon_weaponrange: "Double",
+                    repeating_weapon_weaponslots: 2,
+                    repeating_weapon_weaponammo: 3,
+                    repeating_weapon_weaponammo_max: 3,
+                    repeating_weapon_weaponcost: 4*multiplier,
+                    repeating_weapon_weaponspecial: "Blast. Highly Explosive."
+                });
+                break;
+            case "FLAMER":
+                setAttrs({
+                    repeating_weapon_weapontype: "Shooting",
+                    repeating_weapon_weaponattack: "6D6",
+                    repeating_weapon_weaponrange: "Large Template",
+                    repeating_weapon_weaponslots: 2,
+                    repeating_weapon_weaponammo: 3,
+                    repeating_weapon_weaponammo_max: 3,
+                    repeating_weapon_weaponcost: 6*multiplier,
+                    repeating_weapon_weaponspecial: "Large Burst Template. Fire. Explosive."
+                });
+                break;
+            case "MORTAR":
+                setAttrs({
+                    repeating_weapon_weapontype: "Shooting",
+                    repeating_weapon_weaponattack: "4D6",
+                    repeating_weapon_weaponrange: "Double",
+                    repeating_weapon_weaponslots: 1,
+                    repeating_weapon_weaponammo: 3,
+                    repeating_weapon_weaponammo_max: 3,
+                    repeating_weapon_weaponcost: 4*multiplier,
+                    repeating_weapon_weaponspecial: "Ignores terrain and cover when attacking."
+                });
+                break;
+            case "GRENADES":
+                setAttrs({
+                    repeating_weapon_weapontype: "Shooting",
+                    repeating_weapon_weaponattack: "1D6",
+                    repeating_weapon_weaponrange: "Medium",
+                    repeating_weapon_weaponslots: 0,
+                    repeating_weapon_weaponammo: 5,
+                    repeating_weapon_weaponammo_max: 5,
+                    repeating_weapon_weaponcost: 1,
+                    repeating_weapon_weaponspecial: "Crew Fired. Blast. Explosive. Blitz."
+                });
+                break;
+            case "MOLOTOVS":
+                setAttrs({
+                    repeating_weapon_weapontype: "Shooting",
+                    repeating_weapon_weaponattack: "1D6",
+                    repeating_weapon_weaponrange: "Medium",
+                    repeating_weapon_weaponslots: 0,
+                    repeating_weapon_weaponammo: 5,
+                    repeating_weapon_weaponammo_max: 5,
+                    repeating_weapon_weaponcost: 1,
+                    repeating_weapon_weaponspecial: "Crew Fired. Fire. Blitz."
+                });
+                break;
+            case "OILSLICK":
+                setAttrs({
+                    repeating_weapon_weapontype: "Dropped",
+                    repeating_weapon_weaponattack: "0",
+                    repeating_weapon_weaponrange: "Large Burst",
+                    repeating_weapon_weaponslots: 0,
+                    repeating_weapon_weaponammo: 3,
+                    repeating_weapon_weaponammo_max: 3,
+                    repeating_weapon_weaponcost: 2,
+                    repeating_weapon_weaponspecial: "Treacherous surface."
+                });
+                break;
+            case "CALTROPS":
+                setAttrs({
+                    repeating_weapon_weapontype: "Dropped",
+                    repeating_weapon_weaponattack: "0",
+                    repeating_weapon_weaponrange: "Small Burst",
+                    repeating_weapon_weaponslots: 1,
+                    repeating_weapon_weaponammo: 3,
+                    repeating_weapon_weaponammo_max: 3,
+                    repeating_weapon_weaponcost: 1,
+                    repeating_weapon_weaponspecial: "Treacherous surface. If overlapped, hull damage 2, remove."
+                });
+                break;
+            case "GLUE":
+                setAttrs({
+                    repeating_weapon_weapontype: "Dropped",
+                    repeating_weapon_weaponattack: "0",
+                    repeating_weapon_weaponrange: "Large Burst",
+                    repeating_weapon_weaponslots: 1,
+                    repeating_weapon_weaponammo: 1,
+                    repeating_weapon_weaponammo_max: 1,
+                    repeating_weapon_weaponcost: 1,
+                    repeating_weapon_weaponspecial: "Treacherous surface. If overlapped, reduce current gear by 2 at end of activation."
+                });
+                break;
+            case "MINES":
+                setAttrs({
+                    repeating_weapon_weapontype: "Dropped",
+                    repeating_weapon_weaponattack: "3D6",
+                    repeating_weapon_weaponrange: "Small Burst",
+                    repeating_weapon_weaponslots: 1,
+                    repeating_weapon_weaponammo: 1,
+                    repeating_weapon_weaponammo_max: 1,
+                    repeating_weapon_weaponcost: 1,
+                    repeating_weapon_weaponspecial: "First vehicle to touch template takes shooting attack (3d6, Blast), remove."
+                });
+                break;
+            case "SMOKE":
+                setAttrs({
+                    repeating_weapon_weapontype: "Dropped",
+                    repeating_weapon_weaponattack: "0",
+                    repeating_weapon_weaponrange: "Large Burst",
+                    repeating_weapon_weaponslots: 0,
+                    repeating_weapon_weaponammo: 3,
+                    repeating_weapon_weaponammo_max: 3,
+                    repeating_weapon_weaponcost: 1,
+                    repeating_weapon_weaponspecial: "Rough surface. Counts as obstruction for purposes of cover."
+                });
+                break;
+            case "RAM":
+                setAttrs({
+                    repeating_weapon_weapontype: "Smash",
+                    repeating_weapon_weaponattack: "+2D6",
+                    repeating_weapon_weaponrange: "Smash",
+                    repeating_weapon_weaponslots: 1,
+                    repeating_weapon_weaponammo: 0,
+                    repeating_weapon_weaponammo_max: 0,
+                    repeating_weapon_weaponcost: 4,
+                    repeating_weapon_weaponspecial: "May declare when collision in facing. On own activation, no hazard from collision."
+                });
+                break;
+            case "EXPLODE":
+                setAttrs({
+                    repeating_weapon_weapontype: "Smash",
+                    repeating_weapon_weaponattack: "+6D6",
+                    repeating_weapon_weaponrange: "Smash",
+                    repeating_weapon_weaponslots: 1,
+                    repeating_weapon_weaponammo: 1,
+                    repeating_weapon_weaponammo_max: 1,
+                    repeating_weapon_weaponcost: 3,
+                    repeating_weapon_weaponspecial: "Highly Explosive. Must declare when collision in facing. Vehicle suffers hull damage for each 1 or 2 result. No Bikes."
+                });
+                break;
+            case "THUMPER":
+                setAttrs({
+                    repeating_weapon_weapontype: "Shooting",
+                    repeating_weapon_weaponattack: "",
+                    repeating_weapon_weaponrange: "Double",
+                    repeating_weapon_weaponslots: 2,
+                    repeating_weapon_weaponammo: 1,
+                    repeating_weapon_weaponammo_max: 1,
+                    repeating_weapon_weaponcost: 6,
+                    repeating_weapon_weaponspecial: "Electrical. All vehicles within Medium make a flip check counting current gear +2 (max 6)."
+                });
+                break;
+            case "LIGHTNING":
+                setAttrs({
+                    repeating_weapon_weapontype: "Shooting",
+                    repeating_weapon_weaponattack: "6D6",
+                    repeating_weapon_weaponrange: "Double",
+                    repeating_weapon_weaponslots: 2,
+                    repeating_weapon_weaponammo: 1,
+                    repeating_weapon_weaponammo_max: 1,
+                    repeating_weapon_weaponcost: 6*multiplier,
+                    repeating_weapon_weaponspecial: "Electrical. Chain Reaction, Short, 360°."
+                });
+                break;
+            case "BOOSTER":
+                setAttrs({
+                    repeating_weapon_weapontype: "Shooting",
+                    repeating_weapon_weaponattack: "(6D6)",
+                    repeating_weapon_weaponrange: "Double",
+                    repeating_weapon_weaponslots: 0,
+                    repeating_weapon_weaponammo: 0,
+                    repeating_weapon_weaponammo_max: 0,
+                    repeating_weapon_weaponcost: 2*multiplier,
+                    repeating_weapon_weaponspecial: "Electrical. Target suffers no damage. Increase gear by one for each successful hit (up to max gear), no hazard tokens."
+                });
+                break;
+            case "JAMMER":
+                setAttrs({
+                    repeating_weapon_weapontype: "Shooting",
+                    repeating_weapon_weaponattack: "1D6",
+                    repeating_weapon_weaponrange: "Medium",
+                    repeating_weapon_weaponslots: 0,
+                    repeating_weapon_weaponammo: 5,
+                    repeating_weapon_weaponammo_max: 5,
+                    repeating_weapon_weaponcost: 1*multiplier,
+                    repeating_weapon_weaponspecial: "Electrical. Target may not discard ammo tokens during next activation."
+                });
+                break;
+            default: 
+                setAttrs({
+                    repeating_weapon_weapontype: "",
+                    repeating_weapon_weaponattack: "",
+                    repeating_weapon_weaponrange: "",
+                    repeating_weapon_weaponslots: 0,
+                    repeating_weapon_weaponammo: 0,
+                    repeating_weapon_weaponammo_max: 0,
+                    repeating_weapon_weaponcost: 0,
+                    repeating_weapon_weaponspecial: ""
+                });
+                break;
+        }
+    });
+});
+on('change:repeating_weapons:weaponfacing', function(eventInfo) {
+    var multiplier= ((eventInfo.newValue == "Turret") ? 3 : 1);
+    var wepcost= 0;
+    getAttrs(["repeating_weapons_weaponname"], function(value) {
+        switch (value.repeating_weapons_weaponname) {
+            case "HANDGUN":
+                wepcost=0;
+                break;
+            case "MG":
+                wepcost=2*multiplier;
+                break;
+            case "HMG":
+                wepcost=4*multiplier;
+                break;
+            case "MINIGUN":
+                wepcost=6*multiplier;
+                break;
+            case "CANNON":
+                wepcost=6*multiplier;
+                break;
+            case "ROCKETS":
+                wepcost=4*multiplier;
+                break;
+            case "FLAMER":
+                wepcost=6*multiplier;
+                break;
+            case "MORTAR":
+                wepcost=4*multiplier;
+                break;
+            case "GRENADES":
+                wepcost=1;
+                break;
+            case "MOLOTOVS":
+                wepcost=1;
+                break;
+            case "OILSLICK":
+                wepcost=2;
+                break;
+            case "CALTROPS":
+                wepcost=1;
+                break;
+            case "GLUE":
+                wepcost=1;
+                break;
+            case "MINES":
+                wepcost=1;
+                break;
+            case "SMOKE":
+                wepcost=1;
+                break;
+            case "RAM":
+                wepcost=4;
+                break;
+            case "EXPLODE":
+                wepcost=3;
+                break;
+            case "THUMPER":
+                wepcost=6;
+                break;
+            case "LIGHTNING":
+                wepcost=6*multiplier;
+                break;
+            case "BOOSTER":
+                wepcost=2*multiplier;
+                break;
+            case "JAMMER":
+                wepcost=1*multiplier;
+                break;
+            default:
+                wepcost=0;
+                break;
+        }
+        setAttrs({ repeating_weapons_weaponcost: wepcost });
+    });
+});
+on('change:repeating_upgrades:upgradename', function(eventInfo) {
+    switch (eventInfo.newValue) {
+        case "NITRO":
+            setAttrs({
+                repeating_upgrade_upgradeslots: 0,
+                repeating_upgrade_upgradeammo: 1,
+                repeating_upgrade_upgradeammo_max: 1,
+                repeating_upgrade_upgradecost: 6,
+                repeating_upgrade_upgradespecial: "Declare use at start of activation to activate twice, see special rules.",
+                repeating_upgrade_upgradehull: 0,
+                repeating_upgrade_upgradehandling: 0,
+                repeating_upgrade_upgradegear: 0,
+                repeating_upgrade_upgradecrew: 0
+            });
+            break;
+        case "ARMOR":
+            setAttrs({
+                repeating_upgrade_upgradeslots: 1,
+                repeating_upgrade_upgradeammo: 0,
+                repeating_upgrade_upgradeammo_max: 0,
+                repeating_upgrade_upgradecost: 4,
+                repeating_upgrade_upgradespecial: "+2 Hull. Can be bought multiple times.",
+                repeating_upgrade_upgradehull: 2,
+                repeating_upgrade_upgradehandling: 0,
+                repeating_upgrade_upgradegear: 0,
+                repeating_upgrade_upgradecrew: 0
+            });
+            break;
+        case "TRACKS":
+            setAttrs({
+                repeating_upgrade_upgradeslots: 1,
+                repeating_upgrade_upgradeammo: 0,
+                repeating_upgrade_upgradeammo_max: 0,
+                repeating_upgrade_upgradecost: 4,
+                repeating_upgrade_upgradespecial: "+1 Handling, -1 Max Gear. Ignore rough and treacherous surfaces. No Tanks or Copters.",
+                repeating_upgrade_upgradehull: 0,
+                repeating_upgrade_upgradehandling: 1,
+                repeating_upgrade_upgradegear: -1,
+                repeating_upgrade_upgradecrew: 0
+            });
+            break;
+        case "XTRACREW":
+            setAttrs({
+                repeating_upgrade_upgradeslots: 0,
+                repeating_upgrade_upgradeammo: 0,
+                repeating_upgrade_upgradeammo_max: 0,
+                repeating_upgrade_upgradecost: 4,
+                repeating_upgrade_upgradespecial: "+1 Crew, up to maximum of twice vehicle starting value.",
+                repeating_upgrade_upgradehull: 0,
+                repeating_upgrade_upgradehandling: 0,
+                repeating_upgrade_upgradegear: 0,
+                repeating_upgrade_upgradecrew: 1
+            });
+            break;
+        default:
+            setAttrs({
+                repeating_upgrade_upgradeslots: 0,
+                repeating_upgrade_upgradeammo: 0,
+                repeating_upgrade_upgradeammo_max: 0,
+                repeating_upgrade_upgradecost: 0,
+                repeating_upgrade_upgradespecial: "",
+                repeating_upgrade_upgradehull: 0,
+                repeating_upgrade_upgradehandling: 0,
+                repeating_upgrade_upgradegear: 0,
+                repeating_upgrade_upgradecrew: 0
+            });
+            break;
+    }
+});
+</script>
